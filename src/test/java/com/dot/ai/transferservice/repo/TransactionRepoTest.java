@@ -19,6 +19,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
+import static com.dot.ai.transferservice.TestConstants.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
@@ -32,17 +33,7 @@ class TransactionRepoTest {
     private Transaction transaction1;
     private Transaction transaction2;
     private Transaction transaction3;
-    private String beneficiaryAccountNumber1 = "0000";
-    private String beneficiaryAccountName1 = "Tunde Mary";
-    private String originatorAccountNumber1 = "1111";
-    private String originatorAccountName1 = "Grace Monye";
 
-
-    private String beneficiaryAccountNumber2 = "2222";
-    private String beneficiaryAccountName2 = "Emma Wendy";
-    private String originatorAccountNumber2 = "3333";
-    private String originatorAccountName2 = "Sam Thomas";
-    private String transactionRef = "RYTYYYYJK891";
     @BeforeAll
     void init() {
         transaction1 = Transaction.builder()
