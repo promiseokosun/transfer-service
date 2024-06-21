@@ -73,6 +73,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>transfer-service</finalName>
 	</build>
 
 </project>
