@@ -36,37 +36,6 @@ public class ApiResponse<T> {
     this.httpStatus = httpStatus;
   }
 
-  public ApiResponse<Object> sucessfulApiResponse(Object response){
-    ApiResponse<Object> apiResponse = new ApiResponse<>();
-    apiResponse.setResponseCode("00");
-    apiResponse.setResponseStatus(ResponseStatus.SUCCESS);
-    apiResponse.setHttpStatus(HttpStatus.OK);
-    apiResponse.setMessage("Successful");
-    apiResponse.setData(response);
-    return apiResponse;
-  }
-
-  public ApiResponse<Object> failedApiResponse(String code, String message, HttpStatus httpStatus){
-    ApiResponse<Object> apiResponse = new ApiResponse<>();
-    apiResponse.setResponseCode(code);
-    apiResponse.setResponseStatus(ResponseStatus.FAILED);
-    apiResponse.setHttpStatus(httpStatus);
-    apiResponse.setMessage(message);
-    return apiResponse;
-  }
-
-  public ApiResponse(HttpStatus httpStatus, Throwable ex) {
-    this.httpStatus = httpStatus;
-    this.error = "Unexpected error";
-    this.debugMessage = ex.getLocalizedMessage();
-  }
-
-  public ApiResponse(HttpStatus httpStatus, String message, Throwable ex) {
-    this.httpStatus = httpStatus;
-    this.message = message;
-    this.debugMessage = ex.getLocalizedMessage();
-  }
-
   private void addSubError(ApiSubError subError) {
     if (subErrors == null) {
       subErrors = new ArrayList<>();
