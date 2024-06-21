@@ -18,8 +18,8 @@ public interface TransactionRepo extends JpaRepository<Transaction, Long> {
             " ( :originatorAccountNumber is null or t.originator_account_number = :originatorAccountNumber ) and " +
             " ( :beneficiaryAccountNumber is null or t.beneficiary_account_number = :beneficiaryAccountNumber ) and " +
             " ( :status is null or t.status=:status ) and " +
-            " ( :stateDate is null or t.created_date <= :stateDate ) and " +
-            " ( :endDate is null or t.created_date >= :endDate ) ", nativeQuery = true)
+            " ( :stateDate is null or t.created_date >= :stateDate ) and " +
+            " ( :endDate is null or t.created_date <= :endDate ) ", nativeQuery = true)
     Page<Transaction> searchTransactions(String transactionReference,
                                          String originatorAccountNumber,
                                          String beneficiaryAccountNumber,
